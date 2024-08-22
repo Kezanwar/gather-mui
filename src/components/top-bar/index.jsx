@@ -4,6 +4,7 @@ import GatherLogo from "../gather-logo";
 import { NavLink, useLocation } from "react-router-dom";
 
 import {
+  ActionsContainer,
   LinksContainer,
   StyledAppBar,
   StyledDivider,
@@ -12,6 +13,7 @@ import {
 } from "./styles";
 import SettingsButton from "./components/settings-button";
 import HelpButton from "./components/help-button";
+import Avatar from "./components/avatar";
 
 const textLinks = [
   { label: "Projects", to: "/projects" },
@@ -42,10 +44,11 @@ const TopBar = () => {
               );
             })}
           {!isMobile && <StyledDivider orientation="vertical" flexItem />}
-          <Box>
+          <ActionsContainer>
             <HelpButton />
             <SettingsButton currentRoute={location.pathname} />
-          </Box>
+            <Avatar />
+          </ActionsContainer>
         </LinksContainer>
       </StyledToolBar>
     </StyledAppBar>

@@ -1,4 +1,5 @@
 import {
+  alpha,
   IconButton,
   MenuItem,
   Popover,
@@ -17,6 +18,14 @@ const options = [
 const StyledMenuSubtitle = styled(Typography)(({ theme }) => ({
   margin: theme.spacing(2, 2, 1, 2),
   color: theme.palette.text.secondary,
+}));
+
+const StyledIconButton = styled(IconButton, {
+  shouldForwardProp: (prop) => prop !== "isOpen",
+})(({ theme, isOpen }) => ({
+  backgroundColor: isOpen
+    ? alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity)
+    : "",
 }));
 
 const SettingsButton = ({ currentRoute }) => {
@@ -45,14 +54,15 @@ const SettingsButton = ({ currentRoute }) => {
 
   return (
     <>
-      <IconButton
+      <StyledIconButton
         onClick={(e) => {
           setAnchorEl(e.target);
         }}
+        isOpen={!!anchorEl}
         size="small"
       >
-        <SettingsOutlinedIcon color="secondary" />
-      </IconButton>
+        <SettingsOutlinedIcon color={anchorEl ? "primary" : "secondary"} />
+      </StyledIconButton>
       <Popover
         open={!!anchorEl}
         anchorEl={anchorEl}

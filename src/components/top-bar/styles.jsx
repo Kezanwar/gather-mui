@@ -10,9 +10,7 @@ import {
 
 export const StyledAppBar = styled(AppBar)(({ theme }) => ({
   background: theme.palette.background.default,
-  //   boxShadow: theme.shadows[1],
-  boxShadow: theme.customShadows.light /* taken from our platform, 
-  in reality we would setup theme.shadows with our current platform variants of shadows */,
+  boxShadow: theme.customShadows.light,
 }));
 
 export const LinksContainer = styled(Box)(({ theme }) => ({
@@ -53,4 +51,9 @@ export const StyledDivider = styled(Divider)(() => ({
   height: 20,
   marginTop: "auto",
   marginBottom: "auto",
+}));
+
+export const ActionsContainer = styled(LinksContainer)(({ theme }) => ({
+  flexGrow: "unset",
+  gap: theme.spacing(0.5),
 }));
