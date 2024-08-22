@@ -1,4 +1,4 @@
-import { Box, IconButton, useMediaQuery, useTheme } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
 import GatherLogo from "../gather-logo";
 import { NavLink, useLocation } from "react-router-dom";
@@ -13,7 +13,7 @@ import {
 } from "./styles";
 import SettingsButton from "./components/settings-button";
 import HelpButton from "./components/help-button";
-import Avatar from "./components/avatar";
+import AvatarButton from "./components/avatar-button";
 
 const textLinks = [
   { label: "Projects", to: "/projects" },
@@ -47,7 +47,7 @@ const TopBar = () => {
           <ActionsContainer>
             <HelpButton />
             <SettingsButton currentRoute={location.pathname} />
-            <Avatar />
+            <AvatarButton />
           </ActionsContainer>
         </LinksContainer>
       </StyledToolBar>

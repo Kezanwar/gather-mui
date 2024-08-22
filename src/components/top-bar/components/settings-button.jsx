@@ -1,24 +1,13 @@
-import {
-  alpha,
-  IconButton,
-  MenuItem,
-  Popover,
-  styled,
-  Typography,
-} from "@mui/material";
+import { alpha, IconButton, MenuItem, Popover, styled } from "@mui/material";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { StyledMenuSubtitle } from "./styles";
 
 const options = [
   { label: "Workspace", to: "/workspace-settings" },
   { label: "Users", to: "/users" },
 ];
-
-const StyledMenuSubtitle = styled(Typography)(({ theme }) => ({
-  margin: theme.spacing(2, 2, 1, 2),
-  color: theme.palette.text.secondary,
-}));
 
 const StyledIconButton = styled(IconButton, {
   shouldForwardProp: (prop) => prop !== "isOpen",
@@ -76,11 +65,11 @@ const SettingsButton = ({ currentRoute }) => {
         {options.map((opt) => {
           return (
             <MenuItem
+              key={opt.label}
               onClick={() => {
                 nav(opt.to);
                 closeMenu();
               }}
-              divider={true}
               selected={opt.to === currentRoute}
             >
               {opt.label}
@@ -90,7 +79,7 @@ const SettingsButton = ({ currentRoute }) => {
         <StyledMenuSubtitle variant="subtitle2">Dev</StyledMenuSubtitle>
         {dev_options.map((opt) => {
           return (
-            <MenuItem onClick={opt.onClick} divider={true}>
+            <MenuItem key={opt.label} onClick={opt.onClick}>
               {opt.label}
             </MenuItem>
           );
