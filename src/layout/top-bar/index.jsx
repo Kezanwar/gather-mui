@@ -1,6 +1,6 @@
 import { useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
-import GatherLogo from "../gather-logo";
+import GatherLogo from "../../components/gather-logo";
 import { NavLink, useLocation } from "react-router-dom";
 
 import {
@@ -28,9 +28,8 @@ const TopBar = () => {
   return (
     <StyledAppBar position="sticky">
       <StyledToolBar>
-        <GatherLogo scale={0.4} />
         <LinksContainer>
-          {!isMobile &&
+          {/* {!isMobile &&
             textLinks.map((link) => {
               return (
                 <StyledLink
@@ -42,8 +41,8 @@ const TopBar = () => {
                   {link.label}
                 </StyledLink>
               );
-            })}
-          {!isMobile && <StyledDivider orientation="vertical" flexItem />}
+            })} */}
+          {/* {!isMobile && <StyledDivider orientation="vertical" flexItem />} */}
           <ActionsContainer>
             <HelpButton />
             <SettingsButton currentRoute={location.pathname} />

@@ -10,7 +10,8 @@ import {
 
 export const StyledAppBar = styled(AppBar)(({ theme }) => ({
   background: theme.palette.background.default,
-  boxShadow: theme.customShadows.light,
+  // boxShadow: theme.customShadows.light,
+  boxShadow: "none",
 }));
 
 export const LinksContainer = styled(Box)(({ theme }) => ({

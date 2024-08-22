@@ -6,9 +6,9 @@ const animate = { opacity: 1 };
 
 const PageContainer = ({ children }) => {
   return (
-    <motion.main initial={initial} animate={animate}>
+    <motion.section initial={initial} animate={animate}>
       {children}
-    </motion.main>
+    </motion.section>
   );
 };
 
