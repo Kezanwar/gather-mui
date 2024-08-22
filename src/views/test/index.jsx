@@ -17,9 +17,7 @@ const Test = () => {
   return (
     <PageContainer>
       <ContentContainer maxWidth={"xl"}>
-        <Typography fontWeight={"500"} variant="h3">
-          Gather MUI
-        </Typography>
+        <Typography variant="h3">Gather MUI</Typography>
         <Typography variant="h5">{location.pathname}</Typography>
       </ContentContainer>
     </PageContainer>

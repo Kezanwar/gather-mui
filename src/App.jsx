@@ -1,7 +1,13 @@
+import TopBar from "./components/top-bar";
 import Router from "./routes";
 
 function App() {
-  return <Router />;
+  return (
+    <>
+      <TopBar />
+      <Router />;
+    </>
+  );
 }
 
 export default App;

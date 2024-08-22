@@ -5,6 +5,7 @@ import Test from "../views/test";
 
 const Router = () => {
   const elements = useRoutes([{ path: "*", element: <Test /> }]);
+
   const location = useLocation();
   if (!elements) return null;
   return (
