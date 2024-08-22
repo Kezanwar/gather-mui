@@ -62,7 +62,7 @@ const SettingsButton = ({ currentRoute }) => {
         }}
       >
         <StyledMenuSubtitle variant="subtitle2">Settings</StyledMenuSubtitle>
-        {options.map((opt) => {
+        {options.map((opt, i) => {
           return (
             <MenuItem
               key={opt.label}

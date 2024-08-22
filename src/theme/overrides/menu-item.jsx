@@ -1,4 +1,7 @@
 const MenuItemOverrides = {
+  defaultProps: {
+    divider: true,
+  },
   styleOverrides: {
     root: ({ theme }) => ({
       fontSize: theme.typography.body2.fontSize,
