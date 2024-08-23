@@ -39,6 +39,17 @@ const theme = createTheme({
     MuiBreadcrumbs: BreadcrumbOverride,
     MuiPopover: PopoverOverrides,
     MuiMenuItem: MenuItemOverrides,
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: ({ theme }) => ({
+          backgroundColor: theme.palette.secondary.main,
+          fontSize: theme.typography.body2.fontSize,
+        }),
+        arrow: ({ theme }) => ({
+          color: theme.palette.secondary.main,
+        }),
+      },
+    },
   },
 });
 

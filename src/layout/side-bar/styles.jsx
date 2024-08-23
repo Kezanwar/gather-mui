@@ -29,4 +29,5 @@ export const Drawer = styled(Box)(({ theme }) => ({
   boxSizing: "border-box",
   display: "flex",
   flexDirection: "column",
+  justifyContent: "space-between",
 }));

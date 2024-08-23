@@ -16,6 +16,7 @@ import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
 import { InboxOutlined, MailOutline } from "@mui/icons-material";
 import { Drawer, DrawerHeader } from "./styles";
+import { Box, Tooltip } from "@mui/material";
 
 const options = [
   {
@@ -48,32 +49,35 @@ export default function SideBar() {
       <DrawerHeader>
         <GatherLogo scale={0.4} />
       </DrawerHeader>
-      <List sx={{ mt: 14 }}>
+      <List>
         {options.map((item, index) => (
-          <ListItem key={item.label} disablePadding sx={{ display: "block" }}>
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: "center",
-                px: 2.5,
-              }}
-            >
-              <ListItemIcon
-                color="inherit"
+          <Tooltip key={item.label} arrow placement="right" title={item.label}>
+            <ListItem disablePadding sx={{ display: "block" }}>
+              <ListItemButton
                 sx={{
-                  minWidth: 0,
-                  color: "inherit",
-                  mr: "auto",
+                  minHeight: 48,
                   justifyContent: "center",
+                  px: 2.5,
                 }}
               >
-                {item.icon}
-              </ListItemIcon>
-              {/* <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} /> */}
-            </ListItemButton>
-          </ListItem>
+                <ListItemIcon
+                  color="inherit"
+                  sx={{
+                    minWidth: 0,
+                    color: "inherit",
+                    mr: "auto",
+                    justifyContent: "center",
+                  }}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                {/* <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} /> */}
+              </ListItemButton>
+            </ListItem>
+          </Tooltip>
         ))}
       </List>
+      <Box></Box>
     </Drawer>
   );
 }
