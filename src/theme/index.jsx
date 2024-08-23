@@ -1,4 +1,4 @@
-import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
+import { alpha, createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import { PRIMARY, SECONDARY } from "./palette";
 import ButtonOverride from "./overrides/button";
 import BreadcrumbOverride from "./overrides/breadcrumbs";
@@ -42,11 +42,18 @@ const theme = createTheme({
     MuiTooltip: {
       styleOverrides: {
         tooltip: ({ theme }) => ({
-          backgroundColor: theme.palette.secondary.main,
+          backgroundColor: alpha(
+            theme.palette.primary.main,
+            theme.palette.action.selectedOpacity
+          ),
+          color: theme.palette.primary.main,
           fontSize: theme.typography.body2.fontSize,
         }),
         arrow: ({ theme }) => ({
-          color: theme.palette.secondary.main,
+          color: alpha(
+            theme.palette.primary.main,
+            theme.palette.action.selectedOpacity
+          ),
         }),
       },
     },
